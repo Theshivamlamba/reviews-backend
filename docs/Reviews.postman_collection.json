@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "a411b0a5-1683-4f60-b64b-29aeef8b4f82",
+		"name": "Reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28751973"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Apple iPhone 14\",\n    \"description\": {\n      \"ram\": \"8GB\",\n      \"storage\": \"128GB\",\n      \"color\": \"Midnight Black\"\n    },\n    \"price\": \"60,000\",\n    \"amazonLink\": \"https://www.amazon.in/Apple-iPhone-15-128-GB/dp/B0CHX2F5QT\",\n    \"flipkartLink\": \"https://www.flipkart.com/apple-iphone-15-black-128-gb/p/itm6ac6485515ae4\"\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "priceRanges",
+			"item": [
+				{
+					"name": "Get All Price Ranges",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/priceRanges",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"priceRanges"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Price Range",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rangeValue\": \"Best Phone Under 60K\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/priceRanges/addPriceRange",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"priceRanges",
+								"addPriceRange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Feature to Price Range",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"featureName\" : \"RAM\",\n    \"productId\" : \"662c06cd522d304eafad76da\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/priceRanges/662c071c522d304eafad76dd/addFeature",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"priceRanges",
+								"662c071c522d304eafad76dd",
+								"addFeature"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
